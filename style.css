@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    text-align: center;
+    background-repeat: no-repeat;
+    background:linear-gradient(100deg,hsl(273,75%,66%),hsl(240,73%,65%));
+}
+.container{
+    font-size: 15px;
+    background-color: white;
+    margin: auto;
+    transform: translateY(25%);
+    padding: 30% 0;
+    max-width: 80%;
+    border-radius: 20px;
+}
+.flex{
+    transform: translateY(10px);
+}
+.mobile{
+position: absolute;
+max-width: 100%;
+top: -50px;
+margin:-50%;
+}
+.desktop{
+    display: none;
+}
+.faqs{
+    transform: translateY(30px);
+}
+.faqs:after{
+    background-image: url('./images/illustration-woman-online-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+}
+/* Style the Headings that are used to open and close the accordion panel */
+.accordion {
+    transform: translateX(10%);
+  color: #444;
+  cursor: pointer;
+  padding: 12px 0;
+  margin:0;
+  width: 85%;
+  font-weight: 300;
+}
+
+/* Add "plus" sign (+) after Accordion */
+.accordion::after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  transform: translateX(-2rem);
+  float: right;
+}
+
+/* Add "minus" sign (-) after Accordion (when accordion is active) */
+.active::after {
+  content: "\2212";
+  color: white;
+}
+p{
+    width: 100%;
+    text-align:center;
+}
+
+/* Style the accordion panel */
+.accordion-panel {
+  padding:0 20px;
+  overflow: hidden;
+  max-height:0;
+  transition: max-height 0.2s ease-out;
+}
+@media all and (min-width: 749px){
+    .mobile{   
+        background-image: url('./images/bg-pattern-mobile.svg');
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: 0 150%;
+        position: absolute;
+        top: -50px;
+        padding: 0 10%;
+
+    }
+}
+@media all and (min-width:1080px) and (max-width: 1439px){
+   .container{
+       margin: auto;
+   }
+    .mobile{
+        transform: translateX(20%);
+        
+        background-size: cover;
+    }
+    .faqs{
+        font-size: 20px;
+    }
+}
+@media all and (min-width: 1440px){
+    .container{
+        padding: 5%;
+        margin: auto;
+    }
+    .flex{
+        display: flex;
+    }
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: block;
+        transform:translateY(-10%);
+        background-image: url('./images/bg-pattern-desktop.svg');
+    }
+    .faqs{
+        transform:translateY(10%)
+    }
+}
