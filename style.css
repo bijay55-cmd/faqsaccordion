@@ -38,43 +38,38 @@ margin:-50%;
     background-size: contain;
     background-position: top center;
 }
-/* Style the Headings that are used to open and close the accordion panel */
-.accordion {
-    transform: translateX(10%);
-  color: #444;
-  cursor: pointer;
-  padding: 12px 0;
-  margin:0;
-  width: 85%;
-  font-weight: 300;
-}
-
-/* Add "plus" sign (+) after Accordion */
-.accordion::after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  transform: translateX(-2rem);
-  float: right;
-}
-
-/* Add "minus" sign (-) after Accordion (when accordion is active) */
-.active::after {
-  content: "\2212";
-  color: white;
-}
-p{
+.section {
+    background: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
     width: 100%;
-    text-align:center;
-}
-
-/* Style the accordion panel */
-.accordion-panel {
-  padding:0 20px;
-  overflow: hidden;
-  max-height:0;
-  transition: max-height 0.2s ease-out;
-}
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .section:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .section.active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 @media all and (min-width: 749px){
     .mobile{   
         background-image: url('./images/bg-pattern-mobile.svg');
